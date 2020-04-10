@@ -23,17 +23,30 @@
   
 
 
-<a-entity camera look-controls>
-  <a-entity cursor="fuse: true; fuseTimeout: 500"
-            position="0 0 -1"
-            geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
-            material="color: white; shader: flat">
-  </a-entity>
-
-<a-entity id="player" collider-check>
-  <a-entity raycaster="objects: .collidable" position="0 -0.9 0" rotation="90 0 0"></a-entity>
-</a-entity>
-</a-entity>
+      
+      <a-entity  look-controls wasd-controls touch-look-controls      aframe-injected="" data-aframe-inspector-original-camera=""
+                position="0 2.2 15"
+                camera="userHeight: 1.6" 
+                
+                universal-controls="movementControls:checkpoint" 
+                checkpoint-controls="mode:animated" 
+                visible="true" velocity="0 0 0" 
+                hmd-controls="true" 
+                gamepad-controls="" 
+                mouse-controls="">
+      <!--<a-entity position="0 0 -3"
+                geometry="primitive: ring; radiusOuter:0.3999999999999999;radiusInner:0.3000000000000002; 
+                          "material="color: cyan; shader: flat" scale="0.3 0.3 1" cursor="maxDistance: 30; fuse: true">
+        
+      </a-entity>-->
+        
+        
+        <a-cursor raycaster="objects: .clickable" material="color: cyan; shader: flat"    animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 100; from: 0.1 0.1 0.1; to: 1 1 1"> 
+        
+  
+        </a-cursor>
+        
+    </a-entity>
 
 
 
