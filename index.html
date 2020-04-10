@@ -241,7 +241,7 @@
      <!-- camara-->                                   
       
       
-      <a-entity  id="camera"  look-controls=""   wasd-controls=""  a-frame-touch-look-controls1  ojoocheckpoint-controls    aframe-injected="" data-aframe-inspector-original-camera="" 
+      <a-entity  id="camera"  look-controls=""   wasd-controls=""  a-frame-touch-look-controls1   touch-controls  aframe-injected="" data-aframe-inspector-original-camera="" 
                 position="0 2.2 15"
                 camera="userHeight: 1.6" 
                 universal-controls="movementControls:checkpoint" 
@@ -249,7 +249,7 @@
                 visible="true" velocity="0 0 0" 
                 hmd-controls="true" 
                  
-                gamepad-controls="" 
+                gamepad-controls="true" 
                 mouse-controls="">
          
         <a-cursor raycaster="objects: .clickable" material="color: cyan; shader: flat"    animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 100; from: 0.1 0.1 0.1; to: 1 1 1"> 
@@ -259,7 +259,7 @@
 
 
 
- <!-- ->
+ <!--
       
       
       <a-entity id="#second-camera" look-controls touch-look-controls      aframe-injected="" data-aframe-inspector-original-camera="" 
@@ -277,7 +277,7 @@
        </a-entity>
         
         
- <!-- camara2-->
+ -->
      
 
 
