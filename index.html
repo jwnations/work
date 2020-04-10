@@ -20,7 +20,7 @@
 
 
 
-   <a-box id="box" cursor-listener geometry="primitive: box" material="color: blue" position="0 2 -5" rotation="0 45 45" scale="2 2 2"></a-box>
+   <a-box class="clickable" id="box" cursor-listener geometry="primitive: box" material="color: blue" position="0 2 -5" rotation="0 45 45" scale="2 2 2"></a-box>
 
 
 
@@ -41,8 +41,8 @@
                 checkpoint-controls="mode:animated" 
                 visible="true" velocity="0 0 0" 
                 hmd-controls="true" 
-                gamepad-controls="" 
-                mouse-controls="">
+                gamepad-controls="true" 
+                mouse-controls="true">
       <!--<a-entity position="0 0 -3"
                 geometry="primitive: ring; radiusOuter:0.3999999999999999;radiusInner:0.3000000000000002; 
                           "material="color: cyan; shader: flat" scale="0.3 0.3 1" cursor="maxDistance: 30; fuse: true">
