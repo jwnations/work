@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Wilson Briñez - 2020</title>
+    <!-- 
+    <meta charset="utf-8">
+    <meta name="description" content="Vr - demo">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/styles.css">
+      -->
+    
+    
+    <link rel="shortcut icon"  type="image/png" href="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/favicon-vr.png" />
+
+    
+
+
+    
+     <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v3.13.1/dist/aframe-extras.min.js"></script>
+     <script src="a-frame-touch-look-controls.js"></script>
+    
+      <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+    <script src="https://rawgit.com/chenzlabs/stats-in-vr/master/dist/aframe-stats-in-vr-component.min.js"></script> 
+
+    <script src="/script.js" ></script>
+   
+    <script>AFRAME.registerComponent('raycastable', {});</script>
+
+    
+    
+  </head>
+   <body>
+    <a-scene >
+      
+       <a-assets>
+         
+        <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
+        <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
+        <img src="https://img.gs/bbdkhfbzkk/2048x1024,stretch/http://i.imgur.com/WMNH2OF.jpg" id="chrome" crossorigin="anonymous">
+        <img id="sky" src="https://img.gs/bbdkhfbzkk/2048x2048,stretch/http://i.imgur.com/WqlqEkq.jpg" crossorigin="anonymous" />
+         
+         <a-asset-item id="tree-obj"  src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/T90.obj"></a-asset-item>
+         <a-asset-item id="mio"  src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/cubus_faun_908-54VA.obj"></a-asset-item>
+         <a-asset-item id="mio2"  src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/Eurofighter.obj"></a-asset-item>
+         
+         
+          <a-mixin id="checkpoint"></a-mixin>
+          <a-mixin id="checkpoint-hovered" color="#6CEEB5"></a-mixin>
+           
+          <img id="play" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/play.png"> 
+
+         <!-- cubonegro -->
+          <img id="textura" src="texture.png">
+         
+          <a-mixin
+          id="marker"
+          geometry="primitive: plane; width: 0.02; height: 0.02"
+          material="color: red"
+           ></a-mixin>
+         <a-mixin
+          id="marker1"
+          geometry="primitive: plane; width: 0.02; height: 0.02"
+          material="color: red"
+           ></a-mixin>
+           
+         
+                 <a-mixin id="font" text="font: roboto"></a-mixin>
+
+         
+         
+          <audio id="sonido" src="src:https://raw.githubusercontent.com/wilsonmontoya/archivos/master/Battlefield.mp3"></audio>
+           </a-assets>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <a-entity mixin="marker1" position="0 1 3"></a-entity>
+      <a-entity  font="kelsonsans"  position="1.0 1 0.600"
+                text="anchor: center; width: 5.5;     color: white; value: PROTOTIPO MUSEO BATTLEFIELD ">
+      </a-entity>
+      
+      
+     
+      
+      
+      
+      
+       <a-entity mixin="marker" position="0 1 -10.000"></a-entity>
+      <a-entity position="1.9 1 -10.000"
+                text="anchor: center; width: 5.5; side:  double width:  5.5;  color:green ; value: [Vehiculos de Asalto] ">
+      </a-entity>
+      
+      
+      <a-entity position="-6.646 2.236 -12.836" text="color:white;value:[F 35];width:5.5">
+      </a-entity>
+      
+      <a-entity position="1.9 1 -14.652" text="color:green;value:[T 90];width:5.5">
+      </a-entity>
+      
+      <a-entity position="10.924 1.992 -13.544" text="color:red;value:[Camion Militar];width:5.5">
+      </a-entity>
+      
+      <a-entity position="-12 2.526 -3.201" text="color:white;value:[Banda Sonora];width:5.5" rotation="0 98.2049660854231 0">
+      </a-entity>
+      
+      <a-entity position="5.703 1 -4.692" text="color:white;value:[MUNDO];width:5.5" rotation="0 54.88935677353286 0">
+      </a-entity>
+      
+      
+      
+        <a-entity position="1 0 1" rotation="0 0 0" scale="1 1 1" visible="true">
+          <a-cylinder class="clickable"  checkpoint="offset:0 1.6 0" radius="1" height="0.1"  position="-0.967 0.159 -14.416" color="#39BB82"></a-cylinder>
+          <a-cylinder class="clickable"  checkpoint="offset:0 1.6 0" radius="1" height="0.1" position="7.21 0.133 -11.416" color="#39BB82"></a-cylinder>
+          <a-cylinder class="clickable"  checkpoint="offset:0 1.6 0" radius="1" height="0.1" position="-11.043 0.261 -9.906" color="#39BB82"></a-cylinder>
+          <a-cylinder class="clickable"  checkpoint="offset:0 1.6 0" radius="1" height="0.1" position="6.514 0.261 -1.927" color="#39BB82"></a-cylinder>
+          <a-cylinder class="clickable"  checkpoint="offset:0 1.6 0" radius="1" height="0.1" position="-0.967 0.159 3.08" color="#39BB82"></a-cylinder>
+          <a-cylinder class="clickable"  checkpoint="offset:0 1.6 0" radius="1" height="0.1" position="-0.967 0.159 -6.994" color="#39BB82"></a-cylinder>
+          <a-cylinder class="clickable"  checkpoint="offset:0 1.6 0" radius="1" height="0.1" position="-9.305 0.159 -2.707" color="#39BB82"></a-cylinder>
+        </a-entity>
+
+
+       <a-entity obj-model="obj: #tree-obj"  scale="1 1 1" position="0 1.117 -19.528" sound="src:https://raw.githubusercontent.com/wilsonmontoya/archivos/master/Battlefield.mp3;  on: click"></a-entity>
+       <a-entity obj-model="obj: #mio"  scale="0.010 0.010 0.010" rotation="-86.63121862378047 97.51741673126611 -179.96604345059157" position="10.526 0.442 -15.959" ></a-entity>
+       <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 9000000" obj-model="obj: #mio2"  scale="1 1 1"  position="-7.518 5.776 -13.322" rotation="10.771606548459477 -110.29437556268347 -3.953408786402681">    
+         <a-animation begin="mousedown"
+                      attribute="rotation"
+                      dur="10000"
+                      fill="forwards"
+                      to="0 360 0"
+                      repeat="indefinite"></a-animation>  <a-sound src="#neigh"></a-sound>
+                </a-entity>
+
+      
+      <a-entity  class="clickable" id="box" geometry="" material="color:red" sound="on:click;src:https://raw.githubusercontent.com/wilsonmontoya/archivos/master/Battlefield.mp3" position="-11.836 0.317 -2.24"> 
+         <a-animation begin="mousedown" attribute="rotation" dur="10000" fill="forwards" to="0 360 0" repeat="indefinite"></a-animation></a-entity>
+      
+      
+      
+      
+       
+        <a-sphere class="clickable" animation="property: rotation; to: 0 360 0; loop: true; dur: 10000" radius="2" position="4.135 1.624 -3.869" scale="0.25 0.25 0.25" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/mapamundi.jpg">  
+         <a-animation   begin="mousedown"
+                      attribute="rotation"
+                      dur="1000"
+                      fill="forwards"
+                      to="0 360 0"
+                      repeat="indefinite" ></a-animation></a-sphere>
+     
+     <a-box  color="magenta" position="4.161 0.201 -3.865" scale="1 1.809 1" static-body >   <a-animation begin="mousedown" attribute="material.color" from="white" to="red" dur="1000"></a-animation>
+  </a-box>
+      
+     
+    <a-plane class="clickable" src="#play" height="100" width="100" rotation="-28.762 36.326 2.063" position="-6.56 2.498 -13.645" scale="0.007 0.007 0.007" sound="on:click;src:https://raw.githubusercontent.com/wilsonmontoya/archivos/master/airplane.mp3"></a-plane>
+     <a-plane class="clickable" src="#play" height="100" width="100" rotation="-11.631043241155712 -10.255944532841735 2.9220847551671985" position="1.952 2.348 -13.488" scale="0.007 0.007 0.007" sound="on:click;src:https://raw.githubusercontent.com/wilsonmontoya/archivos/master/tankf.mp3" > </a-plane>
+     <a-plane class="clickable"  src="#play" height="100" width="100" rotation="-11.631043241155712 -41.99780638308934 2.9220847551671985" position="6.51 2.506 -13.61"  scale="0.007 0.007 0.007" sound="on:click;src:https://raw.githubusercontent.com/wilsonmontoya/archivos/master/tank.mp3"></a-plane>
+     
+     <!-- INFORMACION -->
+     <a-box src="#textura" position="-6.615 0.178 -13.666" scale="1 0.429 1"></a-box>
+     <a-cylinder radius="1" height="0.1" position="-6.636 1.211 -13.666" color="black" scale="0.244 18.327 0.223"></a-cylinder>
+      <!-- INFORMACION -->
+     <a-box src="#textura" position="1.964 0.178 -13.666" scale="1 0.429 1"></a-box>
+     <a-cylinder radius="1" height="0.1" position="1.955 1.211 -13.666" color="black" scale="0.244 18.327 0.223"></a-cylinder>
+      <!-- INFORMACION -->
+     <a-box src="#textura" position="6.793 0.178 -13.666" scale="1 0.429 1"></a-box>
+     <a-cylinder radius="1" height="0.1" position="6.781 1.211 -13.666" color="black" scale="0.244 18.327 0.223"></a-cylinder>
+     
+     
+     
+     <!-- techo -->   
+      <a-box position="8.174 11.711 -10.179" rotation="0 0 -13.2926208470351" color="white" scale="16.67 0.094 26.187" repeat="2 2 2" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/tejas.jpg"></a-box>
+      <a-box position="-8.072 11.711 -10.179" rotation="0 0 13.464508185574346" color="white" scale="16.67 0.094 26.187" repeat="2 2 2" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/tejas.jpg"></a-box>
+      
+       
+  
+  
+  
+      <!-- stan  -->
+      <a-box position="-10.805 0.364 -18.291" scale="4.557 0.567 4.098" repeat="5 5 0" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/metal2.jpg"></a-box>
+      <a-box position="-0.23 0.364 -19.067" scale="4.557 0.567 4.098" repeat="5 5 0" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/metal2.jpg"></a-box>
+      <a-box position="11.677 0.364 -19.067" scale="4.557 0.567 4.098" repeat="5 5 0" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/metal2.jpg"></a-box>
+
+
+
+
+      <!-- columna  -->
+       <a-box position="14.483 4.998 -4.796" color="white" scale="1 10.146 1" repeat="2 2 0" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/pared2.jpg"></a-box>
+       <a-box position="-14.331 4.998 -4.796" color="white" scale="1 10.146 1" repeat="2 2 0" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/pared2.jpg"></a-box>
+       <a-box position="14.526 4.998 -13.517" color="white" scale="1 10.146 1" repeat="2 2 0" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/pared2.jpg"></a-box>
+       <a-box position="-14.331 4.998 -13.517" color="white" scale="1 10.146 1" repeat="2 2 0" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/pared2.jpg"></a-box>
+       <!-- pared ventanas frente  -->
+<a-box position="-9.06 5.022 2.342" color="" scale="11.811 9.924 0.276" repeat="2 1 0" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/pared2.jpg" material="color:#FFF" static-body ></a-box>
+
+       <a-box position="9.085 5.155 2.342" color="" scale="2.049 2.597 0.276" repeat="5 1 0" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/pared2.jpg"></a-box>
+       <a-box position="14.007 5.155 2.342" color="" scale="2.049 2.597 0.276" repeat="6 6 0" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/pared2.jpg"></a-box>
+       <a-box position="4.246 5.155 2.342" color="" scale="2.049 2.597 0.276" repeat="5 1 0" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/pared2.jpg"></a-box>
+       <a-box position="9.131 8.216 2.342" color="" scale="11.811 3.76 0.276" repeat="5 1 0" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/pared2.jpg"></a-box>
+       <a-box position="9.131 1.974 2.342" color="" scale="11.811 3.818 0.276" repeat="2 1 0" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/pared2.jpg"></a-box>
+       <!-- paredes con ventanas  -->
+       <a-box position="0.076 7.066 -22.387" rotation="0 -90.126 0" scale="0.1 3.707 4.116" repeat="5 1 0" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/pared2.jpg"></a-box>
+       <a-box position="12.886 7.066 -22.387" rotation="0 -90.126 0" scale="0.1 3.707 4.116" repeat="5 1 0" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/pared2.jpg"></a-box>
+       <a-box position="-12.895 7.066 -22.387" rotation="0 -90.126 0" scale="0.1 3.707 4.116" repeat="5 1 0" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/pared2.jpg"></a-box>
+       <a-box position="-0.016 9.419 -22.387" rotation="0 -90.126 0" scale="0.1 1.136 30.051" repeat="5 1 0" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/pared2.jpg"></a-box>
+       <!-- pared atras -->
+       <a-box position="0.143 2.546 -22.387" rotation="0 -90.1262611740785 0"  scale="0.1 5.402 30.542" repeat="3 1 0" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/pared2.jpg"></a-box>
+       <!-- pared  -->
+      <a-box position="15 5 -10" rotation="0 0 0"  scale="0.1 10 25" repeat="3 1 0" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/pared2.jpg"> </a-box>
+       <!-- pared  -->
+      <a-box position="-14.956 5 -10" scale="0.1 10 25" repeat="3 1 0" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/pared2.jpg"> </a-box>
+       <!-- piso metalico -->
+      <a-box position="-0.034 0.1 -10.033" rotation="0 0 0"  scale="32 0.1 25" repeat="5 5 5" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/metal2.jpg" > </a-box>
+       <!-- -->
+         
+
+
+
+
+       <!-- piso pasto -->
+      <a-plane geometry="primitive: plane; width: 10000; height: 10000;" rotation="-90 0 0"
+        material="src: #grid; repeat: 10000 10000; transparent: false;metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;" shadow="cast: false; receive: false"> </a-plane>
+       <!-- cielo-->
+      <a-sky src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/cielo.png" rotation="0 -90 0"> </a-sky>
+
+           
+
+     <!-- camara-->                                   
+      
+      
+      <a-entity  id="camera"  look-controls2=""   wasd-controls=""  a-frame-touch-look-controls1  ojoocheckpoint-controls    aframe-injected="" data-aframe-inspector-original-camera="" 
+                position="0 2.2 15"
+                camera="userHeight: 1.6" 
+                universal-controls="movementControls:checkpoint" 
+                checkpoint-controls="mode:animated" 
+                visible="true" velocity="0 0 0" 
+                hmd-controls="true" 
+                 
+                gamepad-controls="" 
+                mouse-controls="">
+         
+        <a-cursor raycaster="objects: .clickable" material="color: cyan; shader: flat"    animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 100; from: 0.1 0.1 0.1; to: 1 1 1"> 
+        </a-cursor>
+        
+       </a-entity>
+
+
+
+ <!-- ->
+      
+      
+      <a-entity id="#second-camera" look-controls touch-look-controls      aframe-injected="" data-aframe-inspector-original-camera="" 
+                position="0 2.2 15"
+                camera="userHeight: 0 1.6 0" 
+                universal-controls="movementControls:checkpoint" 
+                checkpoint-controls="mode:animated" 
+                visible="true" velocity="0 0 0" 
+                hmd-controls="true" 
+                gamepad-controls="" 
+                mouse-controls="">
+        <a-cursor raycaster="objects: .clickable" material="color: blue; shader: flat"    animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 100; from: 0.1 0.1 0.1; to: 1 1 1"> 
+        </a-cursor>
+        
+       </a-entity>
+        
+        
+ <!-- camara2-->
+     
+
+
+
+  
+
+    </a-scene>
+  
+
+ <!--><a-entity id="text">
+      <h1> VR/AR</h1>
+    
+     
+      <p>
+        Size: <button id="btn_full">Full</button>
+        <button id="btn_half">1/2</button>
+        <button id="btn_quarter">1/4</button>
+      </p>
+      
+      <p>
+        To try WebXR's experimental AR mode, use an <a href="https://developers.google.com/ar/discover/supported-devices">ARCore-compatible</a> 
+        Android phone with Chrome v79+ and enable <b>WebXR AR Module</b> in chrome://flags.
+      </p>
+      
+      
+    </a-entity>
+
+
+
+
+
+
+ <script>
+      function setSize(scale) {
+        document.getElementById('dino').setAttribute('scale', {x: scale, y: scale, z: scale});
+      }
+      document.getElementById('btn_full').onclick = setSize.bind(this, 1);
+      document.getElementById('btn_half').onclick = setSize.bind(this, 0.5);
+      document.getElementById('btn_quarter').onclick = setSize.bind(this, 0.25);
+    </script>
+  </!--->
+  </body>
+</html>
