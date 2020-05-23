@@ -14,6 +14,7 @@
     <link rel="shortcut icon"  type="image/png" href="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/favicon-vr.png" />
 
     
+  <script src="https://unpkg.com/aframe-multi-video-component/dist/aframe-multi-video-component.min.js"></script>
 
 
     
@@ -42,9 +43,25 @@
     
   </head>
    <body>
-    <a-scene >
+    <a-scene vr-mode-ui="enabled: false">
       
        <a-assets>
+         
+         
+         
+          
+             <video id="mivideo" autoplay loop="true" src="assets/videoprueba.mp4"></video>
+
+         
+         
+         
+         
+        
+         
+         
+        <img id="wood" src="https://github.com/jwnations/work/blob/master/Wood_Tower_Col.jpg">
+        <img id="wood2" src="https://github.com/jwnations/work/blob/master/Wood_Tower_Nor.jpg">
+         
          
         <img id="pink" src="https://img.gs/bbdkhfbzkk/stretch/http://i.imgur.com/1hyyIUi.jpg" crossorigin="anonymous" />
         <img src="https://img.gs/bbdkhfbzkk/stretch/https://i.imgur.com/25P1geh.png" id="grid" crossorigin="anonymous">
@@ -54,6 +71,14 @@
          <a-asset-item id="tree-obj"  src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/T90.obj"></a-asset-item>
          <a-asset-item id="mio"  src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/cubus_faun_908-54VA.obj"></a-asset-item>
          <a-asset-item id="mio2"  src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/Eurofighter.obj"></a-asset-item>
+         <a-asset-item id="weel"  src="https://raw.githubusercontent.com/jwnations/work/archivos-obj/Five_Wheeler-(Wavefront%20OBJ).obj"></a-asset-item>
+         <a-asset-item id="torre"  src="https://raw.githubusercontent.com/jwnations/work/master/wooden%20watch%20tower2.obj"></a-asset-item>
+         
+          
+         
+         
+         
+         
          
          
           <a-mixin id="checkpoint"></a-mixin>
@@ -85,20 +110,21 @@
          <audio class="sonido3" src="src:https://raw.githubusercontent.com/wilsonmontoya/archivos/master/tankf.mp3"></audio>
          <audio class="sonido4" src="src:https://raw.githubusercontent.com/wilsonmontoya/archivos/master/tank.mp3"></audio>
          
+         
+       
+         
          </a-assets>
       
     
       
       
       <a-entity mixin="marker1" position="0 1 3"></a-entity>
-      <a-entity  font="kelsonsans"  position="1.0 1 0.600"
-                text="anchor: center; width: 5.5;     color: white; value: REALIDAD VIRTUAL - v.002 ">
+      <a-entity  font="kelsonsans"  position="1 1.58414 7.66453" scale="1.5 1.5 1.5"
+                text="width:  5.5;  color:  #ffffff;  value:  REALIDAD VIRTUAL - v.002;  align:  center;  negate:  false">
       </a-entity>
       
-      
      
-      
-      
+    
       
       
        <a-entity mixin="marker" position="0 1 -10.000"></a-entity>
@@ -135,9 +161,17 @@
          
           <a-cylinder class="clickable" checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="-23.21681 0.261 -19.17311" color="#39BB82" material="" geometry=""></a-cylinder>
       
+          
+          <a-cylinder class="clickable" checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="11.90629 0.159 4.20966" color="#39BB82" material="" geometry=""></a-cylinder>
+          <a-cylinder class="clickable" checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="11.90629 0.159 14.82683" color="#39BB82" material="" geometry=""></a-cylinder>
+          <a-cylinder class="clickable" checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="18.21861 0.159 3.75987" color="#39BB82" material="" geometry=""></a-cylinder>
+          <a-cylinder class="clickable" checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="-13.82902 0.159 11.57543" color="#39BB82" material="" geometry=""></a-cylinder>
       </a-entity>
 
 
+      
+       <a-entity obj-model="obj: #torre" material="src: #wood2 #wood"  scale="0.9 0.9 0.9" position="-16.645 -0.434 14.524"></a-entity>
+       <a-entity obj-model="obj: #weel"  scale="1.2 1.2 1.2 " position="14.12449 0 10.58773" ></a-entity>
        <a-entity obj-model="obj: #tree-obj"  scale="1 1 1" position="0 0.916 -19.528" ></a-entity>
        <a-entity obj-model="obj: #mio"  scale="0.010 0.010 0.010" rotation="-86.63121862378047 97.51741673126611 -179.96604345059157" position="10.526 0.442 -15.959" ></a-entity>
        <a-entity animation="property: rotation; to: 0 360 0; loop: true; dur: 9000000" obj-model="obj: #mio2"  scale="1 1 1"  position="-7.518 5.776 -13.322" rotation="10.771606548459477 -110.29437556268347 -3.953408786402681">    
@@ -197,12 +231,40 @@
       <a-box position="11.677 0.364 -19.067" scale="4.557 0.567 4.098" repeat="5 5 0" <a-image="" src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/metal2.jpg"></a-box>
 
 
+    <a-entity aframe-multi-video-component="src: #video2; time: 200; duration: 5; volume: 0.5; autoplay:true;" position="0.0 3.4 -2.0"></a-entity>
+
+
+
+
+
+       <a-video src="#mivideo" width="16" height="9" position="0 0 -20"></a-video>
 
 
       <!-- columna  -->
       
        <!-- pared ventanas frente  -->
          
+
+<a-link href="vr.html" class="clickable"  position="-3.5 1.5 13.600" 
+        image="#thumbHome" geometry="primitive: circle; segments: 64" 
+        material="shader: portal; pano: https://cdn.aframe.io/link-traversal/thumbs/home.png; side: double" link=""><a-entity text="" position="" rotation="">
+  </a-entity><a-entity geometry="" material="" rotation="" position="" visible="">
+  </a-entity><a-entity geometry="" material="" visible=""></a-entity>
+  <a-entity text="color: white; align: center; font: kelsonsans; value: index.html; width: 4" position="0 1.5 0"></a-entity>
+  
+  <a-entity geometry="primitive: sphere; radius: 10; segmentsWidth: 64; segmentsHeight: 64" 
+            material="shader: portal; borderEnabled: 0; pano: [object HTMLImageElement]; side: back" visible="false"></a-entity></a-link>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -214,14 +276,13 @@
         material="src: #grid; repeat: 10000 10000; transparent: false;metalness:0.6; roughness: 0.4; sphericalEnvMap: #sky;" shadow="cast: false; receive: false"> </a-plane>
         
       <a-sky src="https://raw.githubusercontent.com/wilsonmontoya/archivos/master/cielo.png" rotation="0 -90 0"> </a-sky>
-
           -->
 
      <!-- camara-->                                   
       
       
-      <a-entity  id="camera"  look-controls=""  look-controls1="true"  wasd-controls=""  
-                position="0 2.2 15"
+      <a-entity  id="camera" look-controls  position="0 2.2 15"  
+                
                 camera="userHeight: 1.6" 
                 universal-controls="movementControls:checkpoint" 
                 checkpoint-controls="mode:animated" 
@@ -231,11 +292,12 @@
                 gamepad-controls="" 
                 mouse-controls="">
          
-        <a-cursor raycaster="objects: .clickable" material="color: cyan; shader: flat"    animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 100; from: 0.1 0.1 0.1; to: 1 1 1"> 
+        <a-cursor    raycaster="objects: .clickable" material="color: cyan; shader: flat"    animation__click="property: scale; startEvents: click; easing: easeInCubic; dur: 100; from: 0.1 0.1 0.1; to: 1 1 1"> 
         </a-cursor>
         
        </a-entity>
-
+      
+      
 
 
  <!--
@@ -283,12 +345,6 @@
       
       
     </a-entity>
-
-
-
-
-
-
  <script>
       function setSize(scale) {
         document.getElementById('dino').setAttribute('scale', {x: scale, y: scale, z: scale});
@@ -298,5 +354,11 @@
       document.getElementById('btn_quarter').onclick = setSize.bind(this, 0.25);
     </script>
   </!--->
+
+
+
+
+
+
   </body>
 </html>
